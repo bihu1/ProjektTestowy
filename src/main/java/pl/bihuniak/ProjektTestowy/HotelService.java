@@ -3,6 +3,8 @@ package pl.bihuniak.ProjektTestowy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 @Service
 public class HotelService {
 
@@ -13,8 +15,8 @@ public class HotelService {
         return hotelRepository.findById(id).orElse(null);
     }
 
-    public Hotel findHotelByName(String name){
-        return hotelRepository.findByName(name);
+    public List<Hotel> findHotelByNameOrCity(String name, String city){
+        return hotelRepository.findByNameOrAddressesCity(name, city);
     }
 
     public void deleteHotelById(long id){

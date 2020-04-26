@@ -3,6 +3,8 @@ package pl.bihuniak.ProjektTestowy;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @RestController
 public class HotelController {
 
@@ -15,8 +17,8 @@ public class HotelController {
     }
 
     @GetMapping("/hotels/filter")
-    public Hotel findByName(@RequestParam String name){
-        return hotelService.findHotelByName(name);
+    public List<Hotel> findByName(@RequestParam String name, @RequestParam String city){
+        return hotelService.findHotelByNameOrCity(name, city);
     }
 
     @GetMapping("/hotels")
