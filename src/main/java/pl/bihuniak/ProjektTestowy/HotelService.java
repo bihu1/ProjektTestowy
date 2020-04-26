@@ -13,6 +13,10 @@ public class HotelService {
         return hotelRepository.findById(id).orElse(null);
     }
 
+    public Hotel findHotelByName(String name){
+        return hotelRepository.findByName(name);
+    }
+
     public void deleteHotelById(long id){
         hotelRepository.deleteById(id);
     }

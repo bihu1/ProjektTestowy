@@ -14,6 +14,11 @@ public class HotelController {
         return hotelService.findHotelById(hotelId);
     }
 
+    @GetMapping("/hotels/filter")
+    public Hotel findByName(@RequestParam String name){
+        return hotelService.findHotelByName(name);
+    }
+
     @GetMapping("/hotels")
     public Iterable<Hotel> findHotel(){
         return hotelService.findAllHotels();

@@ -1,9 +1,7 @@
 package pl.bihuniak.ProjektTestowy;
 
-import javax.persistence.Embedded;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.*;
+import java.util.List;
 
 @Entity
 public class Hotel {
@@ -11,15 +9,15 @@ public class Hotel {
     @GeneratedValue
     private long id;
     private String name;
-    @Embedded
-    private Address address;
+    @ElementCollection
+    private List<Address> addresses;
 
     public Hotel() {}
 
-    public Hotel(long id, String name, Address address) {
+    public Hotel(long id, String name, List<Address> addresses) {
         this.id = id;
         this.name = name;
-        this.address = address;
+        this.addresses = addresses;
     }
 
     public long getId() {
@@ -38,11 +36,11 @@ public class Hotel {
         this.name = name;
     }
 
-    public Address getAddress() {
-        return address;
+    public List<Address> getAddresses() {
+        return addresses;
     }
 
-    public void setAddress(Address address) {
-        this.address = address;
+    public void setAddresses(List<Address> addresses) {
+        this.addresses = addresses;
     }
 }
