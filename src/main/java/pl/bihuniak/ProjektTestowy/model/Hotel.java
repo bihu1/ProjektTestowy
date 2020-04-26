@@ -1,4 +1,4 @@
-package pl.bihuniak.ProjektTestowy;
+package pl.bihuniak.ProjektTestowy.model;
 
 import javax.persistence.*;
 import java.util.List;
@@ -11,13 +11,15 @@ public class Hotel {
     private String name;
     @ElementCollection
     private List<Address> addresses;
+    private boolean expired;
 
     public Hotel() {}
 
-    public Hotel(long id, String name, List<Address> addresses) {
+    public Hotel(long id, String name, List<Address> addresses, boolean expired) {
         this.id = id;
         this.name = name;
         this.addresses = addresses;
+        this.expired = expired;
     }
 
     public long getId() {
@@ -42,5 +44,13 @@ public class Hotel {
 
     public void setAddresses(List<Address> addresses) {
         this.addresses = addresses;
+    }
+
+    public boolean isExpired() {
+        return expired;
+    }
+
+    public void setExpired(boolean expired) {
+        this.expired = expired;
     }
 }

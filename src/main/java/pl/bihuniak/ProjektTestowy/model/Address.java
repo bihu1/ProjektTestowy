@@ -1,4 +1,4 @@
-package pl.bihuniak.ProjektTestowy;
+package pl.bihuniak.ProjektTestowy.model;
 
 import javax.persistence.Embeddable;
 

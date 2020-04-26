@@ -2,6 +2,7 @@ package pl.bihuniak.ProjektTestowy;
 
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
+import pl.bihuniak.ProjektTestowy.model.Hotel;
 
 import java.util.List;
 
